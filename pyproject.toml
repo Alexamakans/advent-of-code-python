@@ -1,0 +1,19 @@
+[project]
+name = "advent-of-code-python"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "pytest>=8.4.2",
+  "typed-argument-parser>=1.11",
+]
+
+[build-system]
+build-backend = "hatchling.build"
+requires = [
+  "hatchling",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["aoc"]
