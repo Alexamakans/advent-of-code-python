@@ -1,4 +1,5 @@
 import os
+import csv
 from typing import final
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -15,10 +16,10 @@ class SampleCase:
 def load_samples(base_path: str) -> list[SampleCase]:
     cases: list[SampleCase] = []
     with open(f"{base_path}/samples.csv") as f:
-        line = f.readline()
-        parts = [x.strip() for x in line.split(",")]
-        sample_case = SampleCase(int(parts[0]), parts[1], parts[2])
-        cases.append(sample_case)
+        r = csv.reader(f, delimiter=",", quotechar='"')
+        for row in r:
+            sample_case = SampleCase(int(row[0]), row[1], row[2])
+            cases.append(sample_case)
     return cases
 
 
