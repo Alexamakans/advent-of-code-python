@@ -5,6 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+  "numba>=0.62.1",
+  "numpy>=2.3.4",
   "pytest>=8.4.2",
   "typed-argument-parser>=1.11",
 ]
