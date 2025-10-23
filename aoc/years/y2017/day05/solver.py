@@ -2,7 +2,6 @@
 from numba import (  # pyright: ignore[reportMissingTypeStubs]
     njit,  # pyright: ignore[reportUnknownVariableType]
 )
-from numpy import ndarray
 import numpy as np
 
 
@@ -27,7 +26,7 @@ def part_two(input: str) -> str:
 
 
 @njit
-def _part_two(offsets: ndarray):
+def _part_two(offsets: np.ndarray):
     cur_index = 0
     num_jumps = 0
     num_offsets = len(offsets)
