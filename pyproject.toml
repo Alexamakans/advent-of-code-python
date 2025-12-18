@@ -8,6 +8,7 @@ dependencies = [
   "numba>=0.62.1",
   "numpy>=2.3.4",
   "pytest>=8.4.2",
+  "sympy>=1.14",
   "typed-argument-parser>=1.11",
 ]
 
