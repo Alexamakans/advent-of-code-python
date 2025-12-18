@@ -15,11 +15,15 @@ class SampleCase:
 
 def load_samples(base_path: str) -> list[SampleCase]:
     cases: list[SampleCase] = []
-    with open(f"{base_path}/samples.csv") as f:
-        r = csv.reader(f, delimiter=",", quotechar='"')
-        for row in r:
-            sample_case = SampleCase(int(row[0]), row[1], row[2])
-            cases.append(sample_case)
+    try:
+        with open(f"{base_path}/samples.csv") as f:
+            r = csv.reader(f, delimiter=",", quotechar='"')
+            for row in r:
+                sample_case = SampleCase(int(row[0]), row[1], row[2])
+                cases.append(sample_case)
+    except:  # noqa: E722
+        print(f"warn: Failed reading '{base_path}/samples.csv'")
+        return []
     return cases
 
 
