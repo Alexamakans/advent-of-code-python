@@ -18,12 +18,12 @@ def test_part_one_is_correct():
     assert solver.part_one(input) == "5171061464548"
 
 
-# def test_part_two_samples_are_correct():
-#    sample_cases = [x for x in util.load_samples(dir_path) if x.part_mask & 2 == 2]
-#    for sample_case in sample_cases:
-#        assert solver.part_two(sample_case.input) == sample_case.expected_result
-#
-#
-# def test_part_two_is_correct():
-#    input = util.load_input_from_path(os.path.join(dir_path, "input"))
-#    assert solver.part_two(input) == "idk"
+def test_part_two_samples_are_correct():
+    sample_cases = [x for x in util.load_samples(dir_path) if x.part_mask & 2 == 2]
+    for sample_case in sample_cases:
+        assert solver.part_two(sample_case.input) == sample_case.expected_result
+
+
+def test_part_two_is_correct():
+    input = util.load_input_from_path(os.path.join(dir_path, "input"))
+    assert solver.part_two(input) == "10189959087258"
